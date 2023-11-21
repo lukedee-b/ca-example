@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Publisher;
+use App\Models\Book;
 
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class PublisherController extends Controller
      */
     public function show(string $id)
     {
-        $publisher = Publisher::findOrFail($id)
+        $publisher = Publisher::findOrFail($id);
 
         return view('publishers.show', [
             'publisher' => $publisher

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -39,7 +39,7 @@ class AuthorController extends Controller
      */
     public function show(string $id)
     {
-        $author = Author::findOrFail($id)
+        $author = Author::findOrFail($id);
 
         return view('authors.show', [
             'author' => $author

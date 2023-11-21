@@ -1,45 +1,33 @@
-<x-app-layout></x-app-layout>
-
-
-
-
-
-
-
-@extends('layouts.myApp')
-
-
-@section('header')
-<h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-    Publishers
-</h2>
-@endsection
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Publishers') }}
+        </h2>
+    </x-slot>
  {{-- <a href="{{ route('publishers.create') }}">Create</a> --}}
 
  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
 
-    <p><b>Name:</b> {{publisher->name}}</p>
-    <p><b>Description:</b> {{publisher->description}}</p>
-    <p><b>Email:</b> {{publisher->email}}</p>
-    <p><b>Phone:</b> {{publisher->phone}}</p>
+    <p><b>Name:</b> {{$publisher->name}}</p>
+    <p><b>Description:</b> {{$publisher->description}}</p>
+    <p><b>Email:</b> {{$publisher->email}}</p>
+    <p><b>Phone:</b> {{$publisher->phone}}</p>
 
     
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Title
+                    Name
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Description
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    ISBN
+                    Email
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Action
+                    Phone
                 </th>
             </tr>
         </thead>
@@ -66,4 +54,5 @@
         </tbody>
     </table>
 </div>
-@endsection
+
+</x-app-layout>
